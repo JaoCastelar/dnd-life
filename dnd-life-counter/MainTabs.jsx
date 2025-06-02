@@ -16,8 +16,7 @@ export default function MainTabs() {
           backgroundColor: '#111',
           paddingVertical: 10,
           borderTopWidth: 1,
-          borderTopColor: '#333',
-          top: '88%'
+          borderTopColor: '#333'
         }}>
           <TouchableOpacity style={{width: '50%', alignItems: 'center'}} onPress={() => navigation.navigate('Home')}>
             <Ionicons name="home" size={24} color="white" />

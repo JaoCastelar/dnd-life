@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "nome": "Prometeu",
+    "nivel": 5,
+    "classes": ["Guerreiro"],
+    "subclasses": ["Cavaleiro Arcano"],
+    "nivel_por_classe":[5],
+    "vida_atual": 38,
+    "vida_maxima": 50,
+    "vida_por_nivel": [10, 10, 10, 10, 10],
+    "habilidades": [
+      {
+        "nome": "Ataque Extra",
+        "classe": "Guerreiro",
+        "nivel": 5,
+        "descricao": "Permite realizar dois ataques ao invés de um ao usar a ação de ataque."
+      },
+      {
+        "nome": "Surto de Ação",
+        "classe": "Guerreiro",
+        "nivel": 2,
+        "descricao": "Uma vez por descanso curto, pode realizar uma ação adicional no turno."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "nome": "Lysandra",
+    "nivel": 4,
+    "classes": ["Feiticeiro"],
+    "subclasses": ["Alma Dracônica"],
+    "nivel_por_classe":[4],
+    "vida_atual": 22,
+    "vida_maxima": 30,
+    "vida_por_nivel": [10, 10, 5, 5],
+    "habilidades": [
+      {
+        "nome": "Magia de Metamagia",
+        "classe": "Feiticeiro",
+        "nivel": 3,
+        "descricao": "Permite moldar feitiços com efeitos especiais, como Duplicar ou Acelerar Magias."
+      },
+      {
+        "nome": "Ascendência Dracônica",
+        "classe": "Feiticeiro",
+        "nivel": 1,
+        "descricao": "Concede afinidade elemental com um tipo de dragão e bônus em feitiços relacionados."
+      }
+    ]
+  }
+]
