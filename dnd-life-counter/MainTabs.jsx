@@ -12,17 +12,20 @@ export default function MainTabs() {
       <SafeAreaView style={{ flex: 1 }}>
         <View style={{
           flexDirection: 'row',
-          // justifyContent: 'space-around',
           backgroundColor: '#111',
+          justifyContent: 'space-around',
           paddingVertical: 10,
           borderTopWidth: 1,
           borderTopColor: '#333'
         }}>
-          <TouchableOpacity style={{width: '50%', alignItems: 'center'}} onPress={() => navigation.navigate('Home')}>
-            <Ionicons name="home" size={24} color="white" />
+          <TouchableOpacity style={{width: '20%', alignItems: 'center'}} onPress={() => navigation.navigate('Home')}>
+            <Ionicons name="people" size={24} color="white" />
           </TouchableOpacity>
-          <TouchableOpacity style={{width: '50%', alignItems: 'center'}} onPress={() => navigation.navigate('Create')}>
+          <TouchableOpacity style={{width: '20%', alignItems: 'center'}} onPress={() => navigation.navigate('Create')}>
             <Ionicons name="add-circle" size={24} color="white" />
+          </TouchableOpacity>
+          <TouchableOpacity style={{width: '20%', alignItems: 'center'}} onPress={() => navigation.navigate('Spells')}>
+            <Ionicons name="book" size={24} color="white" />
           </TouchableOpacity>
         </View>
       </SafeAreaView>

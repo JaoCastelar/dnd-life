@@ -6,6 +6,7 @@ import { DarkTheme } from '@react-navigation/native';
 import HomeScreen from './screens/HomeScreen.jsx';
 import CreateScreen from './screens/CreateScreen.jsx';
 import DetailsScreen from './screens/DetailsScreen.jsx';
+import SpellsScreen from './screens/SpellsScreen.jsx';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,6 +17,7 @@ export default function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Create" component={CreateScreen} />
         <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen name="Spells" component={SpellsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

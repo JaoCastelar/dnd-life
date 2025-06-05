@@ -2,10 +2,10 @@
   {
     "id": 1,
     "nome": "Prometeu",
-    "nivel": 5,
-    "classes": ["Guerreiro"],
-    "subclasses": ["Cavaleiro Arcano"],
-    "nivel_por_classe":[5],
+    "nivel": 7,
+    "classes": ["Guerreiro", "Monge"],
+    "subclasses": ["Cavaleiro Arcano", "Palma Aberta"],
+    "nivel_por_classe":[5, 2],
     "vida_atual": 38,
     "vida_maxima": 50,
     "vida_por_nivel": [10, 10, 10, 10, 10],
@@ -22,7 +22,9 @@
         "nivel": 2,
         "descricao": "Uma vez por descanso curto, pode realizar uma ação adicional no turno."
       }
-    ]
+    ],
+    "magias": [],
+    "mochila": []
   },
   {
     "id": 2,
@@ -47,6 +49,8 @@
         "nivel": 1,
         "descricao": "Concede afinidade elemental com um tipo de dragão e bônus em feitiços relacionados."
       }
-    ]
+    ],
+    "magias": [],
+    "mochila": []
   }
 ]
