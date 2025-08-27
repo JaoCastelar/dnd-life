@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "dnd-life-counter",
+    "name": "DnD Life Counter",
     "slug": "dnd-life-counter",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -18,12 +18,18 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#000000"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.kstelar.dndlifecounter"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "d00845df-ebf5-482f-a7f6-15cea0f5a258"
+      }
     }
   }
 }

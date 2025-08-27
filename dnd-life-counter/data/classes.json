@@ -1,0 +1,613 @@
+{
+  "artifice": [
+    [
+      {
+        "tipo": 1,
+        "nome": "Engenharia mágica",
+        "classe": "Artífice",
+        "nivel": 1,
+        "usos": "Até modificador de inteligência ao mesmo tempo",
+        "ativacao": "Ferramentas de ladrão/artesão",
+        "duracao": "Indefinida",
+        "alcance": null,
+        "dado": null,
+        "dano": null,
+        "cura": null,
+        "descricao": [
+          "Você então toca um objeto não mágico Minúsculo como uma ação e dá a ele uma das seguintes propriedades mágicas.",
+          "O objeto emite luz plena em um raio de 1,5 metros e meialuz por mais 1,5 metros.",
+          "Sempre que tocado por uma criatura, o objeto emite uma mensagem gravada que pode ser ouvida a até 3 metros de distância. Você pronuncia a mensagem quando concede esta propriedade ao objeto, e a gravação não pode ter mais do que 6 segundos de duração.",
+          "O objeto emite continuamente a sua escolha de um odor ou um som não verbal (vento, ondas, farfalhar ou semelhantes). O fenômeno escolhido é perceptível a até 3 metros de distância.",
+          "A propriedade escolhida dura indefinidamente. Com uma ação, você pode tocar o objeto e encerrar a propriedade. Você pode aplicar magia a vários objetos, tocando um objeto cada vez que você utiliza esta característica, embora cada objeto possa conter apenas uma propriedade por vez.",
+          "Se você tentar exceder o seu máximo,a propriedade mais antiga é imediatamente encerrada,e então a nova propriedade se aplica."
+        ],
+        "escolha": null
+      }
+    ], 
+    [
+      {
+        "tipo": 1,
+        "nome": "Infundir item",
+        "classe": "Artífice",
+        "nivel": 2,
+        "usos": "Até modificador de inteligência ao mesmo tempo",
+        "ativacao": "Ferramentas de ladrão/artesão",
+        "duracao": "Indefinida",
+        "alcance": null,
+        "dado": null,
+        "dano": null,
+        "cura": null,
+        "descricao": [
+          "Você ganha a habilidade de imbuir itens mundanos com certas infusões mágicas, transformando esses objetos em itens mágicos."
+          ],
+        "escolha": null,
+        "sub_item": [
+          {
+            "sub_nome": "Infusões conhecidas",
+             "descricao": [
+              ""
+             ]
+          }
+        ]
+      }
+    ], [23], [24], [25], [26], [27], [28], [29], [30],
+    [11], [12], [13], [14], [15], [16], [17], [18], [19], [20]
+  ],
+  "barbaro": [
+    [
+      {
+        "tipo": 1,
+        "nome": "Fúria",
+        "classe": "Bárbaro",
+        "nivel": 1,
+        "usos": 2,
+        "ativacao": "1 ação bônus",
+        "duracao": "1 min (60 turnos)",
+        "alcance": "Pessoal",
+        "dado": null,
+        "dano": 2,
+        "cura": null,
+        "descricao": [
+          "Você tem vantagem em testes de Força e testes de resistência de Força.",
+          "Quando você desferir um ataque com arma corpo-acorpo usando Força, você recebe um bônus nas jogadas de dano que aumenta à medida que você adquire níveis de bárbaro.",
+          "Você possui resistência contra dano de concussão, cortante e perfurante.",
+          "Se você for capaz de conjurar magias, você não poderá conjurá-las ou se concentrar nelas enquanto estiver em fúria."
+        ],
+        "escolha": null
+      },
+      {
+        "tipo": 1,
+        "nome": "Defesa sem armadura",
+        "classe": "Bárbaro",
+        "nivel": 1,
+        "usos": null,
+        "ativacao": null,
+        "duracao": null,
+        "alcance": "Pessoal",
+        "dado": null,
+        "dano": null,
+        "cura": null,
+        "descricao": [
+          "Quando você não estiver vestindo qualquer armadura, sua Classe de Armadura será 10 + seu modificador de Destreza + seu modificador de Constituição.",
+          "Você pode usar um escudo e continuar a receber esse benefício."
+        ],
+        "escolha": null
+      }
+      
+    ], 
+    [
+      {
+        "tipo": 1,
+        "nome": "Ataque descuidado",
+        "classe": "Bárbaro",
+        "nivel": 2,
+        "usos": null,
+        "ativacao": "Primeiro ataque no turno",
+        "duracao": "Final do turno",
+        "alcance": "Pessoal",
+        "dado": null,
+        "dano": null,
+        "cura": null,
+        "descricao": [
+          "Concede vantagem nas jogadas de ataque com armas corpo-a-corpo usando Força durante seu turno.",
+          "as jogadas de ataques feitas contra você possuem vantagem até o início do seu próximo turno."
+        ],
+        "escolha": null
+      },
+      {
+        "tipo": 1,
+        "nome": "Sentido de perigo",
+        "classe": "Bárbaro",
+        "nivel": 2,
+        "usos": null,
+        "ativacao": null,
+        "duracao": null,
+        "alcance": "Visão",
+        "dado": null,
+        "dano": null,
+        "cura": null,
+        "descricao": [
+          "Você possui vantagem em testes de resistência de Destreza contra efeitos que você possa ver, como armadilhas e magias.",
+          "Para receber esse benefício você não pode estar cego, surdo ou incapacitado."
+        ],
+        "escolha": null
+      }
+      
+    ], 
+    [
+      {
+        "tipo": 3,
+        "nome": "Caminho primitivo",
+        "classe": "Bárbaro",
+        "nivel": 3,
+        "usos": null,
+        "ativacao": null,
+        "duracao": null,
+        "alcance": null,
+        "dado": null,
+        "dano": null,
+        "cura": null,
+        "descricao": [
+          "Você escolhe um caminho que molda a natureza da sua fúria.",
+          "Escolha o Caminho do Furioso ou o Caminho do Guerreiro Totêmico"
+        ],
+        "escolha": null
+      }
+    ], 
+    [
+      {
+        "tipo": 2,
+        "nome": "Incremento no valor de habilidade",
+        "classe": "Bárbaro",
+        "nivel": 4,
+        "usos": null,
+        "ativacao": null,
+        "duracao": null,
+        "alcance": null,
+        "dado": null,
+        "dano": null,
+        "cura": null,
+        "descricao": [
+          "Você pode aumentar um valor de habilidade, à sua escolha, em 2 ou você pode aumentar dois valores de habilidade, à sua escolha em 1.",
+          "Como padrão, você não pode elevar um valor de habilidade acima de 20 com essa característica.",
+          "Você também pode escolher não pegar o aumento no valor de habilidade e pegar um talento em troca."
+        ],
+        "escolha": null
+      }
+      
+    ],
+    [
+      {
+        "tipo": 1,
+        "nome": "Ataque extra",
+        "classe": "Bárbaro",
+        "nivel": 5,
+        "usos": null,
+        "ativacao": "Ação de ataque",
+        "duracao": null,
+        "alcance": null,
+        "dado": null,
+        "dano": null,
+        "cura": null,
+        "descricao": [
+          "Você pode atacar duas vezes, ao invés de uma, sempre que você realizar a ação de Ataque no seu turno."
+        ],
+        "escolha": null
+      },
+      {
+        "tipo": 1,
+        "nome": "Movimento rápido",
+        "classe": "Bárbaro",
+        "nivel": 5,
+        "usos": null,
+        "ativacao": null,
+        "duracao": null,
+        "alcance": null,
+        "dado": null,
+        "dano": null,
+        "cura": null,
+        "descricao": [
+          "Seu deslocamento aumenta em 3 metros enquanto você não estiver vestindo uma armadura pesada."
+        ],
+        "escolha": null
+      }
+      
+    ], 
+    [
+      {
+        "tipo": 4
+      }
+    ], 
+    [
+      {
+        "tipo": 1,
+        "nome": "Instinto selvagem",
+        "classe": "Bárbaro",
+        "nivel": 7,
+        "usos": null,
+        "ativacao": null,
+        "duracao": null,
+        "alcance": "Pessoal",
+        "dado": null,
+        "dano": null,
+        "cura": null,
+        "descricao": [
+          "Você recebe vantagem nas jogadas de iniciativa.",
+          "Se você estiver surpreso no começo de um combate e não estiver incapacitado, você pode agir normalmente no seu primeiro turno, mas apenas se você entrar em fúria antes de realizar qualquer outra coisa neste turno."
+        ],
+        "escolha": null
+      }
+    ], 
+    [
+      {
+        "tipo": 2,
+        "nome": "Incremento no valor de habilidade",
+        "classe": "Bárbaro",
+        "nivel": 8,
+        "usos": null,
+        "ativacao": null,
+        "duracao": null,
+        "alcance": null,
+        "dado": null,
+        "dano": null,
+        "cura": null,
+        "descricao": [
+          "Você pode aumentar um valor de habilidade, à sua escolha, em 2 ou você pode aumentar dois valores de habilidade, à sua escolha em 1.",
+          "Como padrão, você não pode elevar um valor de habilidade acima de 20 com essa característica.",
+          "Você também pode escolher não pegar o aumento no valor de habilidade e pegar um talento em troca."
+        ],
+        "escolha": null
+      }
+    ], 
+    [
+      {
+        "tipo": 1,
+        "nome": "Crítico brutal",
+        "classe": "Bárbaro",
+        "nivel": 9,
+        "usos": null,
+        "ativacao": "Acerto crítico",
+        "duracao": null,
+        "alcance": "Pessoal",
+        "dado": null,
+        "dano": "+1 dado da arma usada no ataque",
+        "cura": null,
+        "descricao": [
+          "você pode rolar um dado de dano de arma adicional quando estiver determinando o dano extra de um acerto crítico com uma arma corpo-a-corpo."
+        ],
+        "escolha": null
+      }
+      
+    ], 
+    [
+      {
+        "tipo": 4
+      }
+      
+    ],
+    [11], [12], [13], [14], [15], [16], [17], [18], [19], [20]
+  ],
+  "bardo": [
+    [
+      {
+        "tipo": 1,
+        "nome": "Inspiração de bardo",
+        "classe": "Bardo",
+        "nivel": 1,
+        "usos": "Modificador de carisma",
+        "ativacao": "1 ação bônus",
+        "duracao": "10 min (600 turnos)",
+        "alcance": "18m",
+        "dado": "1d6",
+        "dano": null,
+        "cura": null,
+        "descricao": [
+          "A criatura escolhida poderá rolar o dado e adicionar o valor rolado a um teste de habilidade, jogada de ataque ou teste de resistência que ela fizer.",
+          "A criatura escolhida pode esperar até rolar o d20 antes de decidir usar o dado de Inspiração de Bardo, mas deve decidir antes do Mestre dizer se a rolagem foi bem ou mal sucedida.",
+          "Quando o dado de Inspiração de Bardo for rolado, ele é gasto.",
+          "Uma criatura pode ter apenas um dado de Inspiração de Bardo por vez."
+        ],
+        "escolha": null
+      }
+    ], 
+    [
+      {
+        "tipo": 1,
+        "nome": "Versatilidade",
+        "classe": "Bardo",
+        "nivel": 2,
+        "usos": null,
+        "ativacao": null,
+        "duracao": null,
+        "alcance": null,
+        "dado": null,
+        "dano": null,
+        "cura": null,
+        "descricao": [
+          "Você pode adicionar metade do seu bônus de proficiência, arredondado para baixo, em qualquer teste de habilidade que você fizer que ainda não possua seu bônus de proficiência."
+        ],
+        "escolha": null
+      },
+      {
+        "tipo": 1,
+        "nome": "Canção de descanso",
+        "classe": "Bardo",
+        "nivel": 2,
+        "usos": null,
+        "ativacao": "Início do descanso curto",
+        "duracao": "Descanso curto",
+        "alcance": null,
+        "dado": "1d6",
+        "dano": null,
+        "cura": "1d6",
+        "descricao": [
+          "Você pode usar música ou oração calmantes para ajudar a revitalizar seus aliados feridos durante um descanso curto.",
+          "Se você ou qualquer criatura amigável que puder ouvir sua atuação recuperar pontos de vida no fim do descanso curto ao gastar um ou mais Dados de Vida, cada uma dessas criaturas recupera 1d6 pontos de vida adicionais."
+        ],
+        "escolha": null
+      }
+    ], 
+    [
+      {
+        "tipo": 3,
+        "nome": "Colégio de bardo",
+        "classe": "Bardo",
+        "nivel": 3,
+        "usos": null,
+        "ativacao": null,
+        "duracao": null,
+        "alcance": null,
+        "dado": null,
+        "dano": null,
+        "cura": null,
+        "descricao": [
+          "Você investiga as técnicas avançadas de um colégio de bardo, à sua escolha: o Colégio do Conhecimento ou o Colégio da Bravura."
+        ],
+        "escolha": null
+      },
+      {
+        "tipo": 1,
+        "nome": "Aptidão",
+        "classe": "Bardo",
+        "nivel": 3,
+        "usos": null,
+        "ativacao": null,
+        "duracao": null,
+        "alcance": null,
+        "dado": null,
+        "dano": null,
+        "cura": null,
+        "descricao": [
+          "Escolha duas das perícias em que você é proficiente. Seu bônus de proficiência é dobrado em qualquer teste de habilidade que você fizer que utilize qualquer das perícias escolhidas."
+        ],
+        "escolha": null
+      }
+    ], 
+    [
+      {
+        "tipo": 2,
+        "nome": "Incremento no valor de habilidade",
+        "classe": "Bardo",
+        "nivel": 4,
+        "usos": null,
+        "ativacao": null,
+        "duracao": null,
+        "alcance": null,
+        "dado": null,
+        "dano": null,
+        "cura": null,
+        "descricao": [
+          "Você pode aumentar um valor de habilidade, à sua escolha, em 2 ou você pode aumentar dois valores de habilidade, à sua escolha em 1.",
+          "Como padrão, você não pode elevar um valor de habilidade acima de 20 com essa característica.",
+          "Você também pode escolher não pegar o aumento no valor de habilidade e pegar um talento em troca."
+        ],
+        "escolha": null
+      }
+    ], 
+    [
+      {
+        "tipo": 5,
+        "nome": "Inspiração de bardo",
+        "classe": "Bardo",
+        "nivel": 5,
+        "usos": "Modificador de carisma",
+        "ativacao": "1 ação bônus",
+        "duracao": "10 min (600 turnos)",
+        "alcance": "18m",
+        "dado": "1d8",
+        "dano": null,
+        "cura": null,
+        "descricao": [
+          "A criatura escolhida poderá rolar o dado e adicionar o valor rolado a um teste de habilidade, jogada de ataque ou teste de resistência que ela fizer.",
+          "A criatura escolhida pode esperar até rolar o d20 antes de decidir usar o dado de Inspiração de Bardo, mas deve decidir antes do Mestre dizer se a rolagem foi bem ou mal sucedida.",
+          "Quando o dado de Inspiração de Bardo for rolado, ele é gasto.",
+          "Uma criatura pode ter apenas um dado de Inspiração de Bardo por vez."
+        ],
+        "escolha": null
+      },
+      {
+        "tipo": 1,
+        "nome": "Fonte de inspiração",
+        "classe": "Bardo",
+        "nivel": 5,
+        "usos": null, 
+        "ativacao": null,
+        "duracao": null,
+        "alcance": null,
+        "dado": null,
+        "dano": null,
+        "cura": null,
+        "descricao": [
+          "Você recupera todas as utilizações gastas da sua Inspiração de Bardo quando você termina um descanso curto ou longo."
+        ],
+        "escolha": null
+      }
+    ], 
+    [
+      {
+        "tipo": 4
+      },
+      {
+        "tipo": 1,
+        "nome": "Canção de proteção",
+        "classe": "Bardo",
+        "nivel": 6,
+        "usos": null, 
+        "ativacao": "1 ação",
+        "duracao": "Fim do próximo turno",
+        "alcance": "9m",
+        "dado": null,
+        "dano": null,
+        "cura": null,
+        "descricao": [
+          "Qualquer criatura amigável terá vantagem em testes de resistência para não ser amedrontado ou enfeitiçado.",
+          "Uma criatura deve ser capaz de ouvir você para receber esse benefício.",
+          "A atuação termina prematuramente se você for incapacitado ou silenciado ou se você terminá-la voluntariamente (não requer ação)."          
+        ],
+        "escolha": null
+      }
+    ], 
+    [
+      
+    ], 
+    [
+      {
+        "tipo": 2,
+        "nome": "Incremento no valor de habilidade",
+        "classe": "Bardo",
+        "nivel": 8,
+        "usos": null,
+        "ativacao": null,
+        "duracao": null,
+        "alcance": null,
+        "dado": null,
+        "dano": null,
+        "cura": null,
+        "descricao": [
+          "Você pode aumentar um valor de habilidade, à sua escolha, em 2 ou você pode aumentar dois valores de habilidade, à sua escolha em 1.",
+          "Como padrão, você não pode elevar um valor de habilidade acima de 20 com essa característica.",
+          "Você também pode escolher não pegar o aumento no valor de habilidade e pegar um talento em troca."
+        ],
+        "escolha": null
+      }
+    ], 
+    [
+      {
+        "tipo": 5,
+        "nome": "Canção de descanso",
+        "classe": "Bardo",
+        "nivel": 9,
+        "usos": null,
+        "ativacao": "Início do descanso curto",
+        "duracao": "Descanso curto",
+        "alcance": null,
+        "dado": "1d8",
+        "dano": null,
+        "cura": "1d8",
+        "descricao": [
+          "Você pode usar música ou oração calmantes para ajudar a revitalizar seus aliados feridos durante um descanso curto.",
+          "Se você ou qualquer criatura amigável que puder ouvir sua atuação recuperar pontos de vida no fim do descanso curto ao gastar um ou mais Dados de Vida, cada uma dessas criaturas recupera 1d6 pontos de vida adicionais."
+        ],
+        "escolha": null
+      }
+    ], 
+    [
+      {
+        "tipo": 5,
+        "nome": "Inspiração de bardo",
+        "classe": "Bardo",
+        "nivel": 10,
+        "usos": "Modificador de carisma",
+        "ativacao": "1 ação bônus",
+        "duracao": "10 min (600 turnos)",
+        "alcance": "18m",
+        "dado": "1d10",
+        "dano": null,
+        "cura": null,
+        "descricao": [
+          "A criatura escolhida poderá rolar o dado e adicionar o valor rolado a um teste de habilidade, jogada de ataque ou teste de resistência que ela fizer.",
+          "A criatura escolhida pode esperar até rolar o d20 antes de decidir usar o dado de Inspiração de Bardo, mas deve decidir antes do Mestre dizer se a rolagem foi bem ou mal sucedida.",
+          "Quando o dado de Inspiração de Bardo for rolado, ele é gasto.",
+          "Uma criatura pode ter apenas um dado de Inspiração de Bardo por vez."
+        ],
+        "escolha": null
+      },
+      {
+        "tipo": 1,
+        "nome": "Aptidão",
+        "classe": "Bardo",
+        "nivel": 10,
+        "usos": null,
+        "ativacao": null,
+        "duracao": null,
+        "alcance": null,
+        "dado": null,
+        "dano": null,
+        "cura": null,
+        "descricao": [
+          "Escolha duas das perícias em que você é proficiente. Seu bônus de proficiência é dobrado em qualquer teste de habilidade que você fizer que utilize qualquer das perícias escolhidas."
+        ],
+        "escolha": null
+      },
+      {
+        "tipo": 1,
+        "nome": "Segredos mágicos",
+        "classe": "Bardo",
+        "nivel": 10,
+        "usos": null,
+        "ativacao": null,
+        "duracao": null,
+        "alcance": null,
+        "dado": null,
+        "dano": null,
+        "cura": null,
+        "descricao": [
+          "Escolha duas magias de qualquer classe, incluindo essa. A magia que você escolher deve ser de um nível que você possa conjurar, ou um truque.",
+          "As magias escolhidas contam como magias de bardo para você e já estão incluídas no número de magias conhecidas."
+        ],
+        "escolha": null
+      }
+    ],
+    [11], [12], [13], [14], [15], [16], [17], [18], [19], [20]
+  ],
+  "bruxo": [
+    [41], [42], [43], [44], [45], [46], [47], [48], [49], [50],
+    [11], [12], [13], [14], [15], [16], [17], [18], [19], [20]
+  ],
+  "clerigo": [
+    [61], [62], [63], [64], [65], [66], [67], [68], [69], [70],
+    [11], [12], [13], [14], [15], [16], [17], [18], [19], [20]
+  ],
+  "druida": [
+    [81], [82], [83], [84], [85], [86], [87], [88], [89], [90],
+    [11], [12], [13], [14], [15], [16], [17], [18], [19], [20]
+  ],
+  "feiticeiro": [
+    [81], [82], [83], [84], [85], [86], [87], [88], [89], [90],
+    [11], [12], [13], [14], [15], [16], [17], [18], [19], [20]
+  ],
+  "guerreiro": [
+    [81], [82], [83], [84], [85], [86], [87], [88], [89], [90],
+    [11], [12], [13], [14], [15], [16], [17], [18], [19], [20]
+  ],
+  "ladino": [
+    [81], [82], [83], [84], [85], [86], [87], [88], [89], [90],
+    [11], [12], [13], [14], [15], [16], [17], [18], [19], [20]
+  ],
+  "mago": [
+    [81], [82], [83], [84], [85], [86], [87], [88], [89], [90],
+    [11], [12], [13], [14], [15], [16], [17], [18], [19], [20]
+  ],
+  "monge": [
+    [81], [82], [83], [84], [85], [86], [87], [88], [89], [90],
+    [11], [12], [13], [14], [15], [16], [17], [18], [19], [20]
+  ],
+  "paladino": [
+    [81], [82], [83], [84], [85], [86], [87], [88], [89], [90],
+    [11], [12], [13], [14], [15], [16], [17], [18], [19], [20]
+  ],
+  "patrulheiro": [
+    [81], [82], [83], [84], [85], [86], [87], [88], [89], [90],
+    [11], [12], [13], [14], [15], [16], [17], [18], [19], [20]
+  ]
+}
