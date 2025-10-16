@@ -3,8 +3,12 @@ import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Alert, Modal, Tex
 import { Picker } from '@react-native-picker/picker';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Ionicons } from '@expo/vector-icons';
+import * as FileSystem from 'expo-file-system';
+import * as Sharing from 'expo-sharing';
 import MainTabs from '../MainTabs';
 import SpellModal from './SpellModal';
+import MochilaTab from './MochilaTab';
 
 export default function DetailsScreen({ route }) {
   const personagem = route.params.personagem;
@@ -14,6 +18,8 @@ export default function DetailsScreen({ route }) {
   const [abaSelecionada, setAbaSelecionada] = useState('Habilidades');
   const [modalVisivel, setModalVisivel] = useState(false);
   const [magiaSelecionada, setMagiaSelecionada] = useState(null);
+  
+  const [modalDownloadVisivel, setModalDownloadVisivel] = useState(false);
   
   // Modal subir nível
   const [modalNivelVisivel, setModalNivelVisivel] = useState(false);
@@ -43,6 +49,28 @@ export default function DetailsScreen({ route }) {
       console.error('Erro ao carregar personagem:', error);
     }
   };
+  
+  const baixarPersonagem = async () => {
+    try {
+      const jsonString = JSON.stringify(personagemAtual, null, 2); // formato legível
+      const fileName = `${personagemAtual.nome.replace(/\s/g, '_')}.json`;
+      const fileUri = FileSystem.documentDirectory + fileName;
+      
+      await FileSystem.writeAsStringAsync(fileUri, jsonString, {
+        encoding: FileSystem.EncodingType.UTF8,
+      });
+      
+      await Sharing.shareAsync(fileUri, {
+        mimeType: 'application/json',
+        dialogTitle: 'Compartilhar personagem',
+        UTI: 'public.json',
+      });
+    } catch (err) {
+      Alert.alert('Erro', 'Falha ao exportar o personagem.');
+      console.error(err);
+    }
+  };
+  
   
   const alterarVida = async (valor) => {
     const novaVida = Math.max(0, Math.min(personagemAtual.vida_maxima, vidaAtual + valor));
@@ -213,7 +241,7 @@ export default function DetailsScreen({ route }) {
         </TouchableOpacity>
       ));
       case 'Mochila':
-      return <Text style={styles.text}>Mochila vazia.</Text>;
+      return <MochilaTab personagem={personagemAtual} onUpdate={carregarPersonagem} />;
       default:
       return null;
     }
@@ -231,6 +259,11 @@ export default function DetailsScreen({ route }) {
     <SafeAreaView style={{ flex: 1, backgroundColor: '#000' }}>
     <View style={{ flex: 1 }}>
     <ScrollView contentContainerStyle={[styles.scroll, { paddingBottom: 100 }]}>
+    <View style={{ width:'100%', alignItems: 'flex-end' }}>
+    <TouchableOpacity onPress={() => setModalDownloadVisivel(true)}>
+    <Ionicons name="download-outline" size={28} color="white" />
+    </TouchableOpacity>
+    </View>
     <Text style={styles.title}>{personagemAtual.nome}</Text>
     <Text style={styles.text}>Nível de Personagem: {personagemAtual.nivel}</Text>
     <Text style={styles.text}>Classe(s): {personagemAtual.classes?.map((classe, idx) => `${classe} - ${personagemAtual.nivel_por_classe?.[idx] || 0}`).join(', ')}</Text>
@@ -296,6 +329,33 @@ export default function DetailsScreen({ route }) {
     onUpdate={carregarPersonagem}
     />
     
+    <Modal visible={modalDownloadVisivel} transparent animationType="slide">
+    <View style={styles.modalContainer}>
+    <View style={styles.modalContent}>
+    <Text style={styles.modalTitle}>Baixar Personagem</Text>
+    <Text style={styles.text}>Deseja realmente baixar este personagem em um arquivo JSON?</Text>
+    <View style={styles.modalBotoes}>
+    <TouchableOpacity
+    style={[styles.nivelBtn, { backgroundColor: '#922' }]}
+    onPress={() => setModalDownloadVisivel(false)}
+    >
+    <Text style={styles.nivelTexto}>Cancelar</Text>
+    </TouchableOpacity>
+    <TouchableOpacity
+    style={[styles.nivelBtn]}
+    onPress={() => {
+      baixarPersonagem();
+      setModalDownloadVisivel(false);
+    }}
+    >
+    <Text style={styles.nivelTexto}>Confirmar</Text>
+    </TouchableOpacity>
+    </View>
+    </View>
+    </View>
+    </Modal>
+    
+    
     {/* Modal Subir Nível */}
     <Modal
     visible={modalNivelVisivel}
@@ -357,7 +417,7 @@ export default function DetailsScreen({ route }) {
       <Picker.Item label={c} value={c} key={idx} />
     ))}
     </Picker>
-
+    
     <Text style={styles.warning}>* Ao diminuir o nível sua vida máxima será diminuida no valor ganho ao receber aquele nível</Text>
     
     <View style={styles.modalBotoes}>

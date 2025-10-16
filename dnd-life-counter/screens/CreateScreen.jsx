@@ -3,7 +3,10 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as DocumentPicker from 'expo-document-picker';
 import MainTabs from '../MainTabs';
+import * as FileSystem from 'expo-file-system';
+
 
 export default function CreateScreen() {
   const [nome, setNome] = useState('');
@@ -22,11 +25,10 @@ export default function CreateScreen() {
       const data = await AsyncStorage.getItem('personagens');
       const lista = data ? JSON.parse(data) : [];
       
-      // Descobre o maior id já registrado
       const maiorId = lista.length > 0 ? Math.max(...lista.map(p => p.id)) : 0;
       
       const novoPersonagem = {
-        id: maiorId + 1, // incrementa 1
+        id: maiorId + 1,
         nome,
         nivel: 1,
         classes: [classe],
@@ -36,7 +38,8 @@ export default function CreateScreen() {
         vida_maxima: parseInt(vidaMax, 10),
         vida_por_nivel: [parseInt(vidaMax, 10)],
         habilidades: [],
-        magias: []
+        magias: [],
+        mochila: []
       };
       
       lista.push(novoPersonagem);
@@ -48,6 +51,59 @@ export default function CreateScreen() {
       setVidaMax('');
     } catch (err) {
       Alert.alert('Erro', 'Não foi possível salvar o personagem.');
+    }
+  };
+  
+  const importarPersonagem = async () => {
+    try {
+      // Abrir seletor de arquivos
+      const res = await DocumentPicker.getDocumentAsync({
+        type: 'application/json',
+        copyToCacheDirectory: true,
+      });
+      
+      if (res.canceled) return;
+      
+      const file = res.assets[0];
+      const fileUri = file.uri;
+      
+      // Ler o conteúdo do arquivo com expo-file-system
+      const conteudo = await FileSystem.readAsStringAsync(fileUri);
+      
+      let personagemImportado;
+      try {
+        personagemImportado = JSON.parse(conteudo);
+      } catch (err) {
+        Alert.alert('Erro', 'Arquivo selecionado não é um JSON válido.');
+        return;
+      }
+      
+      // Validação do formato mínimo esperado
+      const camposObrigatorios = [
+        'nome', 'nivel', 'classes', 'nivel_por_classe', 
+        'vida_atual', 'vida_maxima', 'vida_por_nivel', 
+        'habilidades', 'magias'
+      ];
+      
+      const valido = camposObrigatorios.every(campo => campo in personagemImportado);
+      if (!valido) {
+        Alert.alert('Erro', 'Arquivo JSON não possui os campos necessários para criar um personagem.');
+        return;
+      }
+      
+      // Carregar lista existente e evitar ids duplicados
+      const data = await AsyncStorage.getItem('personagens');
+      const lista = data ? JSON.parse(data) : [];
+      const maiorId = lista.length > 0 ? Math.max(...lista.map(p => p.id)) : 0;
+      
+      personagemImportado.id = maiorId + 1; // garante ID único
+      lista.push(personagemImportado);
+      
+      await AsyncStorage.setItem('personagens', JSON.stringify(lista));
+      Alert.alert('Sucesso', 'Personagem importado com sucesso!');
+    } catch (err) {
+      console.error(err);
+      Alert.alert('Erro', 'Falha ao importar o personagem.');
     }
   };
   
@@ -91,9 +147,14 @@ export default function CreateScreen() {
     <TouchableOpacity style={styles.botao} onPress={salvarPersonagem}>
     <Text style={styles.botaoTexto}>Criar Personagem</Text>
     </TouchableOpacity>
+    
+    <TouchableOpacity style={[styles.botaoImport]} onPress={importarPersonagem}>
+    <Text style={styles.botaoTexto}>Importar Personagem</Text>
+    </TouchableOpacity>
+    
     <View>
-      <Text style={styles.warning}>* Seu personagem será criado no nível 1 e será possível evoluir depois</Text>
-      <Text style={styles.warning}>** A vida inserida precisa ser a vida no nível 1</Text>
+    <Text style={styles.warning}>* Seu personagem será criado no nível 1 e será possível evoluir depois</Text>
+    <Text style={styles.warning}>** A vida inserida precisa ser a vida no nível 1</Text>
     </View>
     </View>
     
@@ -112,7 +173,8 @@ const styles = StyleSheet.create({
   input: { backgroundColor: '#222', color: 'white', padding: 10, borderRadius: 8, marginBottom: 15 },
   pickerWrapper: { backgroundColor: '#222', borderRadius: 8, marginBottom: 15 },
   picker: { color: 'white' },
-  botao: { backgroundColor: '#00f0ff', padding: 15, borderRadius: 8, alignItems: 'center', marginBottom: 10},
-  botaoTexto: { color: '#000', fontWeight: 'bold', fontSize: 16 },
-  warning: {color: 'red', fontWeight: 'bold', fontSize: 14, marginBottom: 5, textAlign: 'justify'}
+  botao: { backgroundColor: '#00f0ff', padding: 15, borderRadius: 8, alignItems: 'center', marginBottom: 10 },
+  botaoImport: { padding: 15, borderRadius: 8, alignItems: 'center', marginBottom: 10, borderWidth: 1, borderColor: '#00f0ff' },
+  botaoTexto: { color: '#000', fontWeight: 'bold', fontSize: 16, color: 'white' },
+  warning: { color: 'red', fontWeight: 'bold', fontSize: 14, marginBottom: 5, textAlign: 'justify' }
 });
