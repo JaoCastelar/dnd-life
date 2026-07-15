@@ -9,6 +9,7 @@
     "vida_atual": 38,
     "vida_maxima": 50,
     "vida_por_nivel": [10, 10, 10, 10, 10],
+    "atributos": [10, 10, 10, 10, 10, 10],
     "habilidades": [
       {
         "nome": "Ataque Extra",
@@ -36,6 +37,7 @@
     "vida_atual": 22,
     "vida_maxima": 30,
     "vida_por_nivel": [10, 10, 5, 5],
+    "atributos": [10, 10, 10, 10, 10, 10],
     "habilidades": [
       {
         "nome": "Magia de Metamagia",

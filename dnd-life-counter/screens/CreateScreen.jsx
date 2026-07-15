@@ -37,6 +37,9 @@ export default function CreateScreen() {
         vida_atual: parseInt(vidaMax, 10),
         vida_maxima: parseInt(vidaMax, 10),
         vida_por_nivel: [parseInt(vidaMax, 10)],
+        atributos: [10, 10, 10, 10, 10, 10],
+        salvaguardas: [],
+        pericias: [],
         habilidades: [],
         magias: [],
         mochila: []

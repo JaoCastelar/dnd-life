@@ -85,7 +85,7 @@ export default function SpellModal({ visible, spell, onClose, contexto, personag
         <Text style={styles.modalTexto}>Duração: {spell.duracao}</Text>
         <Text style={styles.modalTexto}>Classes: {spell.classes?.join(', ')}</Text>
 
-        <ScrollView>
+        <ScrollView style={{ maxHeight: '50%' }}>
         <Text style={[styles.modalTexto, { marginTop: 10 }]}>{spell.descricao}</Text>
         </ScrollView>
 
